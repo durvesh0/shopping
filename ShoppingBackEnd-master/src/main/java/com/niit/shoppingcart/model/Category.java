@@ -11,27 +11,42 @@ import org.springframework.stereotype.Component;
 @Table(name = "CATEGORY")
 @Component
 public class Category {
-
-	private String id;
-	private String name;
-	private String desc;
 	
 	@Id
-	@Column(name="id")
+	@Column
+	private String id;
+	
+	@Column(name="name")
+	private String name;
+	
+	@Column(name="desc")
+	private String desc;
+	/*private Set<Product> products;
+
+	@OneToMany(mappedBy="category",fetch = FetchType.EAGER)
+	public Set<Product> getProducts()
+	{
+		return products;
+	}
+	
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}*/
+
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	@Column(name="name")
+	
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	@Column(name="desc")
+	
 	public String getDesc() {
 		return desc;
 	}

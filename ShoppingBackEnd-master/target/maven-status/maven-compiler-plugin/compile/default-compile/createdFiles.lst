@@ -4,6 +4,7 @@ com\niit\shoppingcart\dao\UserDAO.class
 com\niit\shoppingcart\model\Category.class
 com\niit\shoppingcart\config\ApplicationContextConfig.class
 com\niit\shoppingcart\dao\ProductDAO.class
+com\niit\shoppingcart\model\Customer.class
 com\niit\shoppingcart\dao\ProductDAOImpl.class
 com\niit\shoppingcart\dao\CategoryDAO.class
 com\niit\shoppingcart\App.class

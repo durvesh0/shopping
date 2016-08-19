@@ -11,27 +11,50 @@ import org.springframework.stereotype.Component;
 @Table(name = "PRODUCT")
 @Component
 public class Product {
-
-	private String id;
-	private String name;
-	private String price;
 	
 	@Id
-	@Column(name="id")
+	@Column
+	private String id;
+	
+	@Column(name="name")
+	private String name;
+	
+	@Column(name="price")
+	private String price;
+	@Column
+	private String category_id;
+	
+	@Column
+	private String supplier_id;
+	
+	
+	public String getCategory_id() {
+		return category_id;
+	}
+	public void setCategory_id(String category_id) {
+		this.category_id = category_id;
+	}
+	public String getSupplier_id() {
+		return supplier_id;
+	}
+	public void setSupplier_id(String supplier_id) {
+		this.supplier_id = supplier_id;
+	}
+
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	@Column(name="name")
+	
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	@Column(name="price")
+	
 	public String getPrice() {
 		return price;
 	}
@@ -40,6 +63,43 @@ public class Product {
 		this.price = price;
 	}
 	
-	
+	/*public String getCategory_id() {
+	return category_id;
+}
+public void setCategory_id(String category_id) {
+	this.category_id = category_id;
+}
+*/
+
+/*public String getSupplier_id() {
+	return supplier_id;
+}
+public void setSupplier_id(String supplier_id) {
+	this.supplier_id = supplier_id;
+}*/
+
+/*@ManyToOne
+@JoinColumn(name="category_id", nullable = false, updatable = false, insertable = false)
+	private Category category;
+
+public Category getCategory() {
+	return category;
+}
+public void setCategory(Category category) {
+	this.category = category;
+}*/
+
+/*@ManyToOne
+@JoinColumn(name="supplier_id",nullable = false, updatable = false, insertable = false)
+private Supplier supplier;*/
+
+
+/*@ManyToOne
+@JoinColumn(name="category_id", updatable = false, insertable = false)
+private Category category;
+
+@ManyToOne
+@JoinColumn(name="supplier_id", updatable = false, insertable = false)
+private Supplier supplier;*/
 	
 }

@@ -11,19 +11,24 @@ import org.springframework.stereotype.Component;
 @Table(name = "USER")
 @Component
 public class User {
-
+	@Id
+	@Column(name="id")
 	private String id;
+	@Column(name="name")
 	private String name;
+	@Column(name="add")
 	private String add;
+	@Column(name="mob")
 	private String mob;
+	@Column(name="email")
 	private String email;
+	@Column(name="password")
 	private String password;
 	
 	@Column(name="admin",columnDefinition ="tinyint deafault 1")
 	private byte admin=0;
 	
-	@Id
-	@Column(name="id")
+	
 	public String getId() {
 		return id;
 	}
@@ -32,7 +37,6 @@ public class User {
 		this.id = id;
 	}
 	
-	@Column(name="name")
 	public String getName() {
 		return name;
 	}
@@ -41,7 +45,7 @@ public class User {
 		this.name = name;
 	}
 
-	@Column(name="add")
+	
 	public String getAdd() {
 		return add;
 	}
@@ -50,7 +54,7 @@ public class User {
 		this.add = add;
 	}
 
-	@Column(name="mob")
+	
 	public String getMob() {
 		return mob;
 	}
@@ -59,7 +63,7 @@ public class User {
 		this.mob = mob;
 	}
 
-	@Column(name="email")
+	
 	public String getEmail() {
 	return email;
 	}
@@ -69,7 +73,7 @@ public class User {
 		this.email = email;
 	}
 
-	@Column(name="password")
+	
 	public String getPassword() {
 		return password;
 	}
@@ -78,7 +82,7 @@ public class User {
 		this.password = password;
 	}
 
-	@Column(name="admin")
+	
 	public byte getAdmin() {
 		return admin;
 	}

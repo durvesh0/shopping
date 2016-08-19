@@ -12,27 +12,30 @@ import org.springframework.stereotype.Component;
 @Component
 public class Supplier {
 
-	private String id;
-	private String name;
-	
-	private String add;
-	
 	@Id
 	@Column(name="id")
+	private String id;
+	
+	@Column(name="name")
+	private String name;
+	
+	@Column(name="add")
+	private String add;
+
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	@Column(name="name")
+	
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	@Column(name="add")
+	
 	public String getAdd() {
 		return add;
 	}

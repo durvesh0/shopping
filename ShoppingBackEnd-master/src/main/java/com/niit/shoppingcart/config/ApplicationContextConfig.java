@@ -16,6 +16,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
 import com.niit.shoppingcart.dao.CategoryDAOImpl;
+import com.niit.shoppingcart.dao.ProductDAO;
+import com.niit.shoppingcart.dao.ProductDAOImpl;
+import com.niit.shoppingcart.dao.SupplierDAO;
+import com.niit.shoppingcart.dao.SupplierDAOImpl;
 import com.niit.shoppingcart.dao.UserDAOImpl;
 import com.niit.shoppingcart.model.Category;
 import com.niit.shoppingcart.model.Product;
@@ -49,7 +53,7 @@ public class ApplicationContextConfig {
 		Properties properties = new Properties();		
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
-		
+		//mapping class=("com.niit.shoppingcart.model.Category");
 		return properties;
 	}
 
@@ -88,5 +92,18 @@ public class ApplicationContextConfig {
 		
 		return new UserDAOImpl(sessionFactory);
 	}
+	
+	@Autowired
+	@Bean(name="productDAO")
+	public ProductDAO getProductDao(SessionFactory sessionFactory){
+		
+		return new ProductDAOImpl(sessionFactory);
+	}
 
+	@Autowired
+	@Bean(name="supplierDAO")
+	public SupplierDAO getSupplierDao(SessionFactory sessionFactory){
+		
+		return new SupplierDAOImpl(sessionFactory);
+	}
 }
